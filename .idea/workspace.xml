@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7134d641-f9ae-4a60-b632-0ac0dba52b89" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createjs-canvas/res/img/toolbar_img_1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createjs-canvas/res/img/toolbar_img_2.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createjs-canvas/res/img/toolbar_img_3.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Grid.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Point.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/createjs-canvas-2/temp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createjs-canvas-2/canvas-test-1.html" afterPath="$PROJECT_DIR$/createjs-canvas-2/canvas-test-1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Object.js" afterPath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Object.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Stage.js" afterPath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Stage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Toolbar.js" afterPath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Toolbar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Toolbar_Object.js" afterPath="$PROJECT_DIR$/createjs-canvas-2/res/canvas/Toolbar_Object.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createjs-canvas-2/res/js/Define.js" afterPath="$PROJECT_DIR$/createjs-canvas-2/res/js/Define.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/createjs-canvas/World.js" afterPath="$PROJECT_DIR$/createjs-canvas/World.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,11 +23,21 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="canvas-test-1.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="temp.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/createjs-canvas-2/temp.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="370">
+                  <caret line="71" column="36" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="36" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="canvas-test-1.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/createjs-canvas-2/canvas-test-1.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="49" column="53" lean-forward="true" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
+                <state relative-caret-position="289">
+                  <caret line="56" column="10" lean-forward="true" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -109,21 +107,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="temp.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/createjs-canvas-2/temp.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="14">
-                  <caret line="34" column="2" lean-forward="false" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="43" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Toolbar_Object.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/createjs-canvas-2/res/canvas/Toolbar_Object.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="714">
-                  <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+                <state relative-caret-position="590">
+                  <caret line="78" column="44" lean-forward="true" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -155,6 +143,7 @@
       <find>addImage</find>
       <find>sx</find>
       <find>grid</find>
+      <find>intersect</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -412,12 +401,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1489324392004</updated>
-      <workItem from="1489324393287" duration="8822000" />
+      <workItem from="1489324393287" duration="9224000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8822000" />
+    <option name="totallyTimeSpent" value="9224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2391" y="-9" width="3218" height="1318" extended-state="6" />
@@ -500,14 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/createjs-canvas-2/temp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14">
-          <caret line="34" column="2" lean-forward="false" selection-start-line="34" selection-start-column="2" selection-end-line="34" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/createjs-canvas-2/res/canvas/Stage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="621">
@@ -550,16 +531,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/createjs-canvas-2/canvas-test-1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="49" column="53" lean-forward="true" selection-start-line="49" selection-start-column="53" selection-end-line="49" selection-end-column="53" />
+        <state relative-caret-position="289">
+          <caret line="56" column="10" lean-forward="true" selection-start-line="56" selection-start-column="10" selection-end-line="56" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/createjs-canvas-2/res/canvas/Toolbar_Object.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="82" column="0" lean-forward="true" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state relative-caret-position="590">
+          <caret line="78" column="44" lean-forward="true" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/createjs-canvas-2/temp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="71" column="36" lean-forward="false" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="36" />
           <folding />
         </state>
       </provider>

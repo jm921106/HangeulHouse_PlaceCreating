@@ -32,12 +32,16 @@ class Toolbar_Object {
 
         // Mouse Toogle
         object.on("rollover", function (e) {
-            object.scaleX = object.width / object.image.width * 1.2;
-            object.scaleY = object.height / object.image.height * 1.2;
+            if(object.first_down) {
+                object.scaleX = object.width / object.image.width * 1.2;
+                object.scaleY = object.height / object.image.height * 1.2;
+            }
         });
         object.on("rollout", function (e) {
-            object.scaleX = object.width / object.image.width;
-            object.scaleY = object.height / object.image.height;
+            if(object.first_down) {
+                object.scaleX = object.width / object.image.width;
+                object.scaleY = object.height / object.image.height;
+            }
         });
 
         // Mouse Down
@@ -75,10 +79,6 @@ class Toolbar_Object {
         object.on("pressup", function(evt) {
             object.scaleX = object.width / object.image.width;
             object.scaleY = object.height / object.image.height;
-
-            // rollover & rollout & mouse_down 제거
-            object.removeEventListener("rollover", function(e) {});
-            object.removeEventListener("rollout", function(e) {});
         });
 
         return object;
