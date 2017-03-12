@@ -24,6 +24,11 @@ class Object {
         object.regX = object.image.width / 2;
         object.regY = object.image.height / 2;
 
+        /**
+         * Event 유지
+         */
+
+        // EventDispatcher.initialize(object);
 
         /**
          * CreateJS
@@ -31,7 +36,7 @@ class Object {
 
         // click
         object.on("mousedown", function(evt) {
-            console.log(evt)
+            // console.log(evt)
 
         });
 

@@ -17,36 +17,6 @@ class Stage {
         this.stage = new createjs.Stage(this.canvas);
         this.stage.enableMouseOver(10);
 
-        // var circle = new createjs.Shape();
-        // circle.graphics.beginFill("DeepSkyBlue").drawCircle(0, 0, 50);
-        // circle.x = 300;
-        // circle.y = 100;
-        // this.stage.addChild(circle);
-
-        // // click
-        // circle.addEventListener("click", function(event) {
-        //    alert("clicked");
-        // });
-        // circle.on("click", function(evt) {
-        //     alert("type: "+evt.type+" target: "+evt.target+" stageX: "+evt.stageX);
-        // });
-
-        // // mouse hover
-        // circle.on("mouseover", function(event) {
-        //     console.log(event);
-        //     event.target.alpha = (event.type == "mouseover") ? 1 : 0.5;
-        // });
-        // circle.on("mouseout", function(event) {
-        //     event.target.alpha = (event.type == "mouseover") ? 1 : 0.5;
-        // });
-        //
-        // // drag
-        // circle.on("pressmove", function(evt) {
-        //     evt.target.x = evt.stageX;
-        //     evt.target.y = evt.stageY;
-        // });
-        // circle.on("pressup", function(evt) { console.log("up"); })
-
         this.reload();
         createjs.Ticker.on("tick", this.stage);
     }
@@ -64,7 +34,11 @@ class Stage {
         /**
          * Grid
          */
+        this.grid(5, 5);
 
+        /**
+         * Point
+         */
 
 
         /**
@@ -75,14 +49,40 @@ class Stage {
 
     }
 
-    // toolbar() {
-    //
-    //     this.toolbar = new createjs.Graphics();
-    //     this.toolbar.beginFill("red");
-    //     this.toolbar.drawRect(0, 0, 100, 500);
-    //     this.addChild(this.toolbar);
-    //
-    // }
+    grid (x, y) {
+
+        this.lines = new createjs.Shape();
+
+        for (var i=1; i<x; i++) {
+            this.create_grid(this.lines, 'x', ( (CANVAS_WIDTH - TOOLBAR_WIDTH) / x * i) + TOOLBAR_WIDTH);
+        }
+
+        for (var i=1; i<y; i++) {
+            this.create_grid(this.lines, 'y', (CANVAS_HEIGHT / y) * i);
+        }
+
+    }
+
+    create_grid (lines, type, value) {
+
+        if(type == 'x') {
+            lines.graphics
+                .setStrokeStyle(1)
+                .beginStroke("black")
+                .moveTo(value, 0)
+                .lineTo(value, CANVAS_HEIGHT)
+                .endStroke();
+        } else {
+            lines.graphics
+                .setStrokeStyle(1)
+                .beginStroke("black")
+                .moveTo(0, value)
+                .lineTo(CANVAS_WIDTH, value)
+                .endStroke();
+        }
+
+        this.stage.addChild(lines);
+    }
 
 
 }

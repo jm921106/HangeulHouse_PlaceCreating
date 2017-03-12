@@ -21,12 +21,12 @@ class World extends createjs.Container {
         this.addBoxes();
         // [TICK SET]
 
-        this.addImage(tabZone[0], "bigpic1", 850, 100, 1, 1, 50, "D:\\LOGI\\logicong-web-intergrated\\public\\uploads\\bomb.png");
-        this.addImage(tabZone[0], "bigpic2", 850, 200, 1, 1, 50, "D:\\LOGI\\logicong-web-intergrated\\public\\uploads\\bomb.png");
-        this.addImage(tabZone[0], "bigpic3", 850, 300, 1, 1, 50, "D:\\LOGI\\logicong-web-intergrated\\public\\uploads\\bomb.png");
+        this.addImage(tabZone[0], "bigpic1", 850, 100, 1, 1, 50, "toolbar_img_1.jpg");
+        this.addImage(tabZone[0], "bigpic2", 850, 200, 1, 1, 50, "toolbar_img_2.jpg");
+        this.addImage(tabZone[0], "bigpic3", 850, 300, 1, 1, 50, "toolbar_img_3.jpg");
 
-        this.addImage(tabZone[1], "bigpic4", 850, 100, 1, 1, 50, "D:\\LOGI\\logicong-web-intergrated\\public\\uploads\\bomb.png");
-        this.addImage(tabZone[1], "bigpic5", 850, 200, 1, 1, 50, "D:\\LOGI\\logicong-web-intergrated\\public\\uploads\\bomb.png");
+        this.addImage(tabZone[1], "bigpic4", 850, 100, 1, 1, 50, "toolbar_img_1.jpg");
+        this.addImage(tabZone[1], "bigpic5", 850, 200, 1, 1, 50, "toolbar_img_2.jpg");
         // this.on("tick", this.tick_exist_goal);
 
         covers.forEach(function(v, i) {
@@ -318,7 +318,7 @@ class World extends createjs.Container {
     // [IMAGE ADD 메소드]
     addImage(origin, name, x, y, sx, sy, size, img_src) {
         // object create
-        var object = new createjs.Bitmap(img_src);
+        var object = new createjs.Bitmap('res/img/'+img_src);
         // 위치
         object.x = x, object.y = y;
 

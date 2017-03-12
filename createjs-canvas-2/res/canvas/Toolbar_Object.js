@@ -9,6 +9,7 @@ class Toolbar_Object {
 
         // Image 이름
         object.name = name;
+        object.first_down = true;
 
         // Image 위치
         object.x = x;
@@ -41,13 +42,43 @@ class Toolbar_Object {
 
         // Mouse Down
         object.on("mousedown", function(evt) {
-            console.log("mouse dwon");
-            try {
-                var contents = new Object(img, name, width, height, x, y);
-                window.stage.toolbar.addChild(contents);
-            } catch (e) {
-                console.log(e);
+
+            if(object.first_down) {
+                // 새로운 Object
+                var new_toolbar_object = new Toolbar_Object(img, name, width, height, x, y);
+
+                // 크기 조정
+                object.width = OBJECT_SIZE;
+                object.height = OBJECT_SIZE;
+                object.scaleX = object.width / object.image.width * 1.2;
+                object.scaleY = object.height / object.image.height * 1.2;
+
+                // 추가 후 위치 조정
+                window.stage.toolbar.addChild(new_toolbar_object);
+                window.stage.toolbar.swapChildren(new_toolbar_object, object);
+
+                object.first_down = false;
+            } else {
+
+                object.scaleX = object.width / object.image.width * 1.2;
+                object.scaleY = object.height / object.image.height * 1.2;
             }
+
+        });
+
+        // drag
+        object.on("pressmove", function(evt) {
+            evt.target.x = evt.stageX;
+            evt.target.y = evt.stageY;
+        });
+
+        object.on("pressup", function(evt) {
+            object.scaleX = object.width / object.image.width;
+            object.scaleY = object.height / object.image.height;
+
+            // rollover & rollout & mouse_down 제거
+            object.removeEventListener("rollover", function(e) {});
+            object.removeEventListener("rollout", function(e) {});
         });
 
         return object;
@@ -57,9 +88,4 @@ class Toolbar_Object {
     mouseToggle (event) {
         event.target.alpha = (event.type == "mouseover") ? 1 : 0.5;
     }
-
-
-
-
-
 }
