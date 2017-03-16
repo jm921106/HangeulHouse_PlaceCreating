@@ -28,17 +28,47 @@ class Stage {
         /**
          * Stage Width / Height
          */
-        this.canvas.width = CANVAS_WIDTH;
-        this.canvas.height = CANVAS_HEIGHT;
+        this.canvas.width = window.CANVAS_WIDTH;
+        this.canvas.height = window.CANVAS_HEIGHT;
+        window.STANDARD_X = (window.CANVAS_WIDTH - window.TOOLBAR_WIDTH) / W_COUNT;
+        window.STANDARD_Y = window.CANVAS_HEIGHT / H_COUNT;
 
         /**
          * Grid
          */
-        this.grid(5, 5);
+        this.grid(window.W_COUNT, window.H_COUNT);
 
         /**
          * Point
+         *
+         * [1] 화면용
+         * [2] 접근용
          */
+
+        this.points = this.stage.addChild(new createjs.Container());
+
+        // x2 point
+
+        for(var i=0; i<window.W_COUNT-1; i++) {
+            for(var j=0; j<window.H_COUNT-1; j++) {
+                this.point = new Point(STANDARD_X * 2, STANDARD_Y * 2, i, j, '2');
+
+                // 접근을 위한 point 집합
+                this.points.addChild(this.point);
+            }
+        }
+
+        // x1 point
+
+        // for(var i=0; i<window.W_COUNT; i++) {
+        //     for(var j=0; j<window.H_COUNT; j++) {
+        //         this.point = new Point(STANDARD_X, STANDARD_Y, i, j, '1');
+        //
+        //         // 접근을 위한 point 집합
+        //         this.points.addChild(this.point);
+        //     }
+        // }
+
 
 
         /**

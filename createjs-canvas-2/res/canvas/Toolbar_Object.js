@@ -52,10 +52,8 @@ class Toolbar_Object {
                 var new_toolbar_object = new Toolbar_Object(img, name, width, height, x, y);
 
                 // 크기 조정
-                object.width = OBJECT_SIZE;
-                object.height = OBJECT_SIZE;
-                object.scaleX = object.width / object.image.width * 1.2;
-                object.scaleY = object.height / object.image.height * 1.2;
+                // object.scaleX = object.width / object.image.width;
+                // object.scaleY = object.height / object.image.height;
 
                 // 추가 후 위치 조정
                 window.stage.toolbar.addChild(new_toolbar_object);
@@ -64,8 +62,8 @@ class Toolbar_Object {
                 object.first_down = false;
             } else {
 
-                object.scaleX = object.width / object.image.width * 1.2;
-                object.scaleY = object.height / object.image.height * 1.2;
+                object.scaleX = object.width / object.image.width;
+                object.scaleY = object.height / object.image.height;
             }
 
         });
@@ -74,18 +72,63 @@ class Toolbar_Object {
         object.on("pressmove", function(evt) {
             evt.target.x = evt.stageX;
             evt.target.y = evt.stageY;
+
+            // evt.currentTarget.x = evt.stageX;
+            // evt.currentTarget.y = evt.stageY;
+
+            // stage.update();
+            // much smoother because it refreshes the screen every pixel movement instead of the FPS set on the Ticker
+
+            // var point_count = window.stage.points.getNumChildren();
+            // for (var i=0; i<point_count; i++) {
+            //     var point = stage.points.getChildAt(i);
+            //
+            //     var pt = point.globalToLocal(window.stage.mouseX, window.stage.mouseY);
+            //     if (window.stage.mouseInBounds && point.hitTest(pt.x, pt.y)) {
+            //         // evt.currentTarget.alpha = 0.2;
+            //         point.graphics.clear();
+            //         point.graphics.setStrokeStyle(3)
+            //             .beginStroke("#0066A4")
+            //             .rect(0, 0, window.STANDARD_X, window.STANDARD_Y);
+            //     } else {
+            //         // evt.currentTarget.alpha = 1;
+            //         point.graphics.clear();
+            //         point.graphics.setStrokeStyle(2)
+            //             .beginStroke("black")
+            //             .beginFill("#ffedc2")
+            //             .rect(0, 0, window.STANDARD_X, window.STANDARD_Y);
+            //     }
+            // };
+
         });
 
         object.on("pressup", function(evt) {
-            object.scaleX = object.width / object.image.width;
-            object.scaleY = object.height / object.image.height;
+
+            var point_count = window.stage.points.getNumChildren();
+            for (var i=0; i<point_count; i++) {
+                var point = window.stage.points.getChildAt(i);
+                if(intersect(evt.currentTarget, point)){
+                    object.x = point.x + object.width / 2;
+                    object.y = point.y + object.height / 2;
+                    object.alpha = 1;
+                    object.scaleX = object.width / object.image.width;
+                    object.scaleY = object.height / object.image.height;
+
+                    point.graphics.clear();
+                    point.graphics.setStrokeStyle(2)
+                        .beginStroke("black")
+                        .beginFill("#ffedc2")
+                        .rect(0, 0, window.STANDARD_X, window.STANDARD_Y);
+                };
+            }
+
         });
 
         return object;
 
     }
 
-    mouseToggle (event) {
-        event.target.alpha = (event.type == "mouseover") ? 1 : 0.5;
-    }
+    /**
+     *
+     */
 }

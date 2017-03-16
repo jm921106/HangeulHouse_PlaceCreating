@@ -22,10 +22,6 @@ class Grid extends createjs.Container {
             this.gy = this.value;
         }
 
-        console.log(this.value);
-        console.log(CANVAS_WIDTH);
-        console.log(CANVAS_HEIGHT);
-
         /**
          * createjs line
          */
