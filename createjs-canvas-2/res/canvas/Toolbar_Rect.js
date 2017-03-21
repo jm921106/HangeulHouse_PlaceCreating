@@ -1,4 +1,4 @@
-class Toolbar_Rect{
+class Toolbar_Rect {
 
     constructor(name, width, height, o_width, o_height, x, y, type) {
 
@@ -33,23 +33,7 @@ class Toolbar_Rect{
         object.type = type;
 
 
-        /**
-         * CreateJS Event
-         */
-
-        // Mouse Toogle
-        // object.on("rollover", function (e) {
-        //     if(object.first_down) {
-        //         object.scaleX = 1.2;
-        //         object.scaleY = 1.2;
-        //     }
-        // });
-        // object.on("rollout", function (e) {
-        //     if(object.first_down) {
-        //         object.scaleX = 1;
-        //         object.scaleY = 1;
-        //     }
-        // });
+        /** CreateJS Event **/
 
         // Mouse Down [누름]
         object.on("mousedown", function(evt) {
@@ -96,52 +80,38 @@ class Toolbar_Rect{
             evt.target.x = evt.stageX;
             evt.target.y = evt.stageY;
 
-            // [ Perfermance 문제 ]
-
-            // var point_count = window.stage.points.getNumChildren();
-            // for (var i=0; i<point_count; i++) {
-            //     var point = window.stage.points.getChildAt(i);
-            //     if(intersect(evt.currentTarget, point)){
-            //         // evt.currentTarget.alpha = 0.2;
-            //         point.graphics.clear();
-            //         point.graphics.setStrokeStyle(3)
-            //             .beginStroke("#0066A4")
-            //             .rect(0, 0, o_width, o_height);
-            //     } else {
-            //         // evt.currentTarget.alpha = 1;
-            //         point.graphics.clear();
-            //         point.graphics.setStrokeStyle(2)
-            //             .beginStroke("black")
-            //             .beginFill("#ffedc2")
-            //             .rect(0, 0, o_width, o_height);
-            //     }
-            // }
+            // Drag 간 이벤트 [ Perfermance 문제 ]
 
         });
 
-        // mouse up [ 올림 ]
+        // mouse up  [ 올림 ]
         object.on("pressup", function(evt) {
 
             // 크기 수정 > Point크기
-            // object.scaleX = o_width / object.width;
-            // object.scaleY = o_height / object.height;
-            // object.width = o_width;
-            // object.height = o_height;
 
+            // 중복 방지
+            var double_check = false;
+
+            // Points 집합 확인
             var point_count = window.stage.points.getNumChildren();
-
             for (var i=0; i<point_count; i++) {
-                var point = window.stage.points.getChildAt(i);
-                if(intersect(evt.currentTarget, point)){
-                    object.x = point.x + object.width / 2;
-                    object.y = point.y + object.height / 2;
-                    object.alpha = 0.1;
 
-                    point.graphics.clear();
-                    point.graphics
-                        .beginFill("black")
-                        .rect(0, 0, window.STANDARD_X, window.STANDARD_Y);
-                };
+                if(!double_check) {
+                    var point = window.stage.points.getChildAt(i);
+                    if(intersect(evt.currentTarget, point)){
+                        object.x = point.x + object.width / 2;
+                        object.y = point.y + object.height / 2;
+                        object.alpha = 0.1;
+
+                        point.graphics.clear();
+                        point.graphics
+                            .beginFill("black")
+                            .rect(0, 0, window.STANDARD_X, window.STANDARD_Y);
+
+                        double_check = true;
+                    };
+                }
+
             }
 
         });
@@ -153,6 +123,10 @@ class Toolbar_Rect{
     /**
      * method
      */
+
+    method() {
+
+    }
 
 
 }

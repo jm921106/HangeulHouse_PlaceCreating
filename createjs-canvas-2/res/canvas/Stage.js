@@ -45,31 +45,18 @@ class Stage {
          * [2] 접근용
          */
 
+        // points Container
         this.points = this.stage.addChild(new createjs.Container());
 
-        // x2 point
-
-        for(var i=0; i<window.W_COUNT-1; i++) {
-            for(var j=0; j<window.H_COUNT-1; j++) {
-                this.point = new Point(STANDARD_X * 2, STANDARD_Y * 2, i, j, '2');
+        // 최소단위 point 만들기
+        for(var i=0; i<window.W_COUNT; i++) {
+            for(var j=0; j<window.H_COUNT; j++) {
+                this.point = new Point(STANDARD_X, STANDARD_Y, i, j, '1');
 
                 // 접근을 위한 point 집합
                 this.points.addChild(this.point);
             }
         }
-
-        // x1 point
-
-        // for(var i=0; i<window.W_COUNT; i++) {
-        //     for(var j=0; j<window.H_COUNT; j++) {
-        //         this.point = new Point(STANDARD_X, STANDARD_Y, i, j, '1');
-        //
-        //         // 접근을 위한 point 집합
-        //         this.points.addChild(this.point);
-        //     }
-        // }
-
-
 
         /**
          * Toolbar

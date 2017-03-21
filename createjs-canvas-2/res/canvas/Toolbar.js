@@ -54,11 +54,11 @@ class Toolbar extends createjs.Container {
 
         var toolbar_rect = new Toolbar_Rect(
             'toolbar_object_1',
-            STANDARD_X * 1 / 3,
-            STANDARD_Y * 1 / 3,
+            STANDARD_X * 2 / 3,
+            STANDARD_Y * 2 / 3,
             STANDARD_X * 1,
             STANDARD_Y * 1,
-            50,
+            30,
             100,
             '1');
         this.addChild(toolbar_rect);
@@ -68,29 +68,49 @@ class Toolbar extends createjs.Container {
             STANDARD_Y * 2 / 3,
             STANDARD_X * 2,
             STANDARD_Y * 2,
-            50,
-            170,
+            70,
+            100,
             '2');
         this.addChild(toolbar_rect);
         toolbar_rect = new Toolbar_Rect(
             'toolbar_object_3',
-            STANDARD_X * 3 / 3,
-            STANDARD_Y * 3 / 3,
+            STANDARD_X * 2 / 3,
+            STANDARD_Y * 2 / 3,
             STANDARD_X * 3,
             STANDARD_Y * 3,
-            50,
-            270,
+            30,
+            200,
             '3');
         this.addChild(toolbar_rect);
         toolbar_rect = new Toolbar_Rect(
             'toolbar_object_4',
-            STANDARD_X * 4 / 3,
-            STANDARD_Y * 4 / 3,
+            STANDARD_X * 2 / 3,
+            STANDARD_Y * 2 / 3,
             STANDARD_X * 4,
             STANDARD_Y * 4,
-            50,
-            400,
+            70,
+            200,
             '4');
+        this.addChild(toolbar_rect);
+        toolbar_rect = new Toolbar_Rect(
+            'toolbar_object_3',
+            STANDARD_X * 2 / 3,
+            STANDARD_Y * 2 / 3,
+            STANDARD_X * 5,
+            STANDARD_Y * 5,
+            30,
+            300,
+            '5');
+        this.addChild(toolbar_rect);
+        toolbar_rect = new Toolbar_Rect(
+            'toolbar_object_4',
+            STANDARD_X * 2 / 3,
+            STANDARD_Y * 2 / 3,
+            STANDARD_X * 6,
+            STANDARD_Y * 6,
+            70,
+            300,
+            '6');
         this.addChild(toolbar_rect);
 
     }
